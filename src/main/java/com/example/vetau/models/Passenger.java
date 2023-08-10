@@ -1,8 +1,11 @@
 package com.example.vetau.models;
 
-import javafx.scene.control.Button;
-
-import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.sql.Date;
 
 public class Passenger {
     private String ID_Passenger;
@@ -13,9 +16,7 @@ public class Passenger {
     private String address;
     private String phone;
     private String email;
-    private String Level;
-    private Button deleteButton;
-    private Button inforButton;
+    private int Level;
     private Account account;
 
     public Passenger(String ID_Passenger, String ho_va_Ten, String phone,Account account, String email) {
@@ -26,23 +27,7 @@ public class Passenger {
         this.account = account;
     }
 
-    public Button getDeleteButton() {
-        return deleteButton;
-    }
-
-    public void setDeleteButton(Button deleteButton) {
-        this.deleteButton = deleteButton;
-    }
-
-    public Button getInforButton() {
-        return inforButton;
-    }
-
-    public void setInforButton(Button inforButton) {
-        this.inforButton = inforButton;
-    }
-
-    public Passenger(String ID_Passenger, String ho_va_Ten, String cccd, String gender, Date date, String address, String phone, String email, String level) {
+    public Passenger(String ID_Passenger, String ho_va_Ten, String cccd, String gender, Date date, String address, String phone, String email, int level, Account account) {
         this.ID_Passenger = ID_Passenger;
         this.ho_va_Ten = ho_va_Ten;
         this.cccd = cccd;
@@ -52,8 +37,20 @@ public class Passenger {
         this.phone = phone;
         this.email = email;
         Level = level;
-        this.inforButton = new Button();
-        this.deleteButton = new Button();
+        this.account = account;
+    }
+
+    public Passenger(String ID_Passenger, String ho_va_Ten, String cccd, String gender, Date date, String address, String phone, String email, int level) {
+        this.ID_Passenger = ID_Passenger;
+        this.ho_va_Ten = ho_va_Ten;
+        this.cccd = cccd;
+        this.gender = gender;
+        this.date = date;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        Level = level;
+
     }
 
     public String getID_Passenger() {
@@ -91,6 +88,10 @@ public class Passenger {
     public Date getDate() {
         return date;
     }
+    public LocalDate getLocalDate() {
+
+        return date.toLocalDate();
+    }
 
     public void setDate(Date date) {
         this.date = date;
@@ -120,11 +121,11 @@ public class Passenger {
         this.email = email;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return Level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(int level) {
         Level = level;
     }
     public String getUsername() {

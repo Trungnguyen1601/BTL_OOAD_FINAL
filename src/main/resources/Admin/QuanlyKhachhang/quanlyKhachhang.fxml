@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vetau.App.Admin.QuanlyKhachHang.InformationPassengerController">
+    <children>
+        <BorderPane prefHeight="750.0" prefWidth="1350.0">
+            <top>
+                <AnchorPane prefHeight="32.0" prefWidth="1350.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <AnchorPane prefHeight="32.0" prefWidth="1350.0" styleClass="bg-white" stylesheets="@custormer.css">
+                            <children>
+                                <Button fx:id="dashboard_close" layoutX="1294.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#Setdashboard_close" prefHeight="24.0" prefWidth="56.0" styleClass="close" stylesheets="@custormer.css">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="CLOSE" />
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="dashboard_minus" layoutX="1238.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#Setdashboard_minus" prefHeight="24.0" prefWidth="56.0" styleClass="minimize" stylesheets="@custormer.css">
+                                    <graphic>
+                                        <FontAwesomeIcon glyphName="MINUS" />
+                                    </graphic>
+                                </Button>
+                                <FontAwesomeIcon fill="#283bb2" glyphName="TRAIN" layoutX="14.0" layoutY="22.0" size="1.4em" />
+                                <Label layoutX="39.0" layoutY="2.0" prefHeight="24.0" prefWidth="234.0" text="Hệ thống đặt vé tàu">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </top>
+            <left>
+                <AnchorPane prefHeight="710.0" prefWidth="290.0" style="-fx-background-color: #d3edff;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label layoutX="115.0" layoutY="247.0" text="ADMIN">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="dashbroard_form_btn" layoutX="32.0" layoutY="341.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="226.0" styleClass="nav-btn" stylesheets="@custormer.css" text="DashBroard">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="DASHBOARD" />
+                            </graphic>
+                        </Button>
+                        <Button layoutX="33.0" layoutY="438.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="226.0" styleClass="nav-btn" stylesheets="@custormer.css" text="Xem khách hàng">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="EYE" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="train_form_btn" layoutX="33.0" layoutY="389.0" mnemonicParsing="false" onMouseClicked="#Switch_train_form" prefHeight="36.0" prefWidth="226.0" styleClass="nav-btn" stylesheets="@custormer.css" text="Quản lý chuyến tàu">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="EDIT" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="quanlytau_form_btn" layoutX="32.0" layoutY="487.0" mnemonicParsing="false" onMouseClicked="#Switch_quanlytau" prefHeight="36.0" prefWidth="226.0" styleClass="nav-btn" stylesheets="@custormer.css" text="Quản lý thông tin tàu">
+                            <graphic>
+                                <FontAwesomeIcon glyphName="BOOK" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="signout_btn" layoutX="32.0" layoutY="660.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="36.0" prefWidth="226.0" styleClass="nav-btn" stylesheets="@custormer.css" text="Đăng xuất">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                            <graphic>
+                                <FontAwesomeIcon glyphName="SIGN_OUT" size="1.4em" />
+                            </graphic>
+                        </Button>
+                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="45.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../Image/welcome.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+            </left>
+            <center>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <AnchorPane prefHeight="718.0" prefWidth="1060.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <AnchorPane prefHeight="38.0" prefWidth="1060.0" style="-fx-background-color: #ffd5d3;" styleClass="bg-white" stylesheets="@custormer.css">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="29.0" layoutY="3.0" prefHeight="32.0" prefWidth="190.0" text="Quản lý khách hàng">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <FontAwesomeIcon glyphName="USER" layoutX="23.0" layoutY="24.0" size="1.2em" />
+                                        <TextField fx:id="search_customer_txt" layoutX="860.0" layoutY="3.0" prefHeight="24.0" prefWidth="192.0" styleClass="add_textfield" stylesheets="@custormer.css" />
+                                        <FontAwesomeIcon glyphName="SEARCH" layoutX="837.0" layoutY="23.0" />
+                                    </children></AnchorPane>
+                                <AnchorPane layoutY="38.0" prefHeight="680.0" prefWidth="1060.0" styleClass="bg-white" stylesheets="@custormer.css">
+                                    <children>
+                                        <TableView fx:id="Customer_Table" layoutX="8.0" layoutY="8.0" prefHeight="664.0" prefWidth="1044.0">
+                                            <columns>
+                                                <TableColumn fx:id="ID_Khachhang" prefWidth="113.0" text="ID Khách hàng" />
+                                                <TableColumn fx:id="Name" prefWidth="170.0" text="Họ và Tên" />
+                                                <TableColumn fx:id="PhoneNumber" minWidth="3.0" prefWidth="162.0" text="Phone Number" />
+                                                <TableColumn fx:id="Username" prefWidth="153.0" text="Tên đăng nhập" />
+                                                <TableColumn fx:id="Password" prefWidth="159.0" text="Mật khẩu" />
+                                                <TableColumn fx:id="Email" prefWidth="168.0" text="Email" />
+                                            </columns>
+                                        </TableView>
+                                    </children></AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

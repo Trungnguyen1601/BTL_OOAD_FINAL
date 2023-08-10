@@ -1,0 +1,73 @@
+
+.bg-form{
+    -fx-background-color: linear-gradient(to top right, #ffd5d3, #f4e3e2);
+}
+
+.close {
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}
+
+.close:hover{
+    -fx-background-color:#c5273f;
+}
+
+.minimize{
+    -fx-background-color: transparent;
+    -fx-cursor:hand;
+}
+.minimize:hover{
+    -fx-background-color: #2371d0
+}
+.textfield {
+    -fx-background-color:transparent;
+    -fx-text-inner-color:black;
+    -fx-border-color:#35529d;
+    -fx-border-width:0px 0px 1px 0px;
+    -fx-text-size:13px;
+}
+.textfield:focused{
+    -fx-border-color : #2371d0;
+    -fx-border-width:0px 0px 1px 0px;
+}
+
+.save-btn{
+    -fx-background-color :linear-gradient(to bottom right,#35529d, #2371d0);
+    -fx-background-radius:8px;
+    -fx-text-fill:#fff;
+    -fx-font-size:14px;
+    -fx-cursor:hand;
+}
+
+.save-btn:hover{
+    -fx-background-color:linear-gradient(to bottom right, #3862c2, #4284d0);
+}
+
+.cancel-btn{
+    -fx-background-color :linear-gradient(to bottom right,#1ea446ff, #37be5fff);
+    -fx-background-radius:8px;
+    -fx-text-fill:#fff;
+    -fx-font-size:14px;
+    -fx-cursor:hand;
+}
+
+.cancel-btn:hover{
+    -fx-background-color:linear-gradient(to bottom right, #37be5fff, #6dd58cff);
+}
+
+.combo-box {
+    -fx-border-width: 0.5px;
+    -fx-border-color: #ACACAC;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-font-size: 13px;
+
+}
+
+.combo-box :hover {
+    -fx-text-fill: black;
+}
+
+.combo-box :focused {
+    -fx-text-fill: black;
+}

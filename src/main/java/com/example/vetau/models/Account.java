@@ -4,9 +4,17 @@ public class Account {
     private String ID_Account;
     private String Username;
     private String Password;
+    private String Role;
 
     public Account() {
 
+    }
+
+    public Account(String ID_Account, String username, String password, String role) {
+        this.ID_Account = ID_Account;
+        Username = username;
+        Password = password;
+        Role = role;
     }
 
     public Account(String ID_Account, String username, String password) {

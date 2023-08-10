@@ -1,11 +1,15 @@
 package com.example.vetau.helpers;
 
 
+import com.example.vetau.models.Account;
+import com.example.vetau.models.Passenger;
 import javafx.scene.control.Alert;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class Database {
+    Connection connection = connectionDB();
     public static Connection connectionDB (){
         try{
             //Class.forName("com.mysql.jdbc.Driver");
@@ -28,11 +32,12 @@ public class Database {
             return resultSet;
         } catch (SQLException e) {
             throw new RuntimeException(e);
+
         }
 
 
     }
-    public static ResultSet SELECT_STRING_FROM_TABLE(Connection connection,String TableName, String ColumnName,String Data)
+    public static ResultSet SELECT_String_FROM_TABLE(Connection connection,String TableName, String ColumnName,String Data)
     {
         String sql = "SELECT * "+ " FROM " + TableName + " WHERE " + ColumnName + " = ?";
 
@@ -59,6 +64,7 @@ public class Database {
             return resultSet;
         } catch (SQLException e) {
             throw new RuntimeException(e);
+
         }
 
 
@@ -79,15 +85,15 @@ public class Database {
 
 
     }
-    public static ResultSet DELETE_INT_FROM_TABLE(Connection connection,String TableName, String ColumnName,int Data)
+    public static void DELETE_INT_FROM_TABLE(Connection connection,String TableName, String ColumnName,int Data)
     {
         String sql = "DELETE" + " FROM " + TableName + " WHERE " + ColumnName + " = ?";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1,Data);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            return resultSet;
+            preparedStatement.executeUpdate();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
 
@@ -136,6 +142,15 @@ public class Database {
             throw new RuntimeException(e);
         }
 
+    }
+    public static boolean Check_ExistInDatabase(Connection connection,String TableName, String ColumnName,String Data) throws SQLException {
+        boolean flag_exist = false;
+        ResultSet resultSet = SELECT_String_FROM_TABLE(connection,TableName,ColumnName,Data);
+        if(resultSet.next())
+        {
+            flag_exist = true;
+        }
+        return flag_exist;
     }
     static void Insert() throws SQLException {
         Connection connection = Database.connectionDB();
@@ -201,6 +216,84 @@ public class Database {
                     System.out.println("TOA"+i+"TAU"+j + " " + loaitoa);
                     preparedStatement.executeUpdate();
             }
+        }
+
+    }
+    public Account fetchAccount(String ID_Account) {
+        Account account = null;
+        try {
+            String query = "SELECT * FROM account_user WHERE ID_Account = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, ID_Account);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                String UserName = resultSet.getString("Username");
+                String Password = resultSet.getString("Password");
+                account = new Account(ID_Account, UserName, Password);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return account;
+    }
+
+    public Passenger fetchUser(String ID_Account) {
+        Passenger passenger = null;
+        Account account = fetchAccount(ID_Account);
+        try {
+            // Execute a SQL query to retrieve user data
+            String query = "SELECT ID_Khachhang, Ten, CCCD, Ngay_sinh, Gioi_tinh, ID_Account, Email, Level, Dia_chi, SDT FROM khach_hang WHERE ID_Account = ?";
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, ID_Account);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            // Fetch the user data from the result set
+            if (resultSet.next()) {
+                String ID_Passenger = resultSet.getString("ID_Khachhang");
+                String Ten = resultSet.getString("Ten");
+                String CCCD = resultSet.getString("CCCD");
+                Date Ngay_sinh = resultSet.getDate("Ngay_sinh");
+                String Gioi_tinh = resultSet.getString("Gioi_tinh");
+                String Email = resultSet.getString("Email");
+                int Level = resultSet.getInt("Level");
+                String Dia_chi = resultSet.getString("Dia_chi");
+                String SDT = resultSet.getString("SDT");
+
+                passenger = new Passenger(ID_Passenger, Ten, CCCD, Gioi_tinh, Ngay_sinh, Dia_chi, SDT, Email, Level, account);
+            }
+
+            statement.close();
+            resultSet.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return passenger;
+    }
+
+    public void updateUser(Passenger passenger) {
+        try {
+            // Execute a SQL update query to update the user data
+            String query = "UPDATE khach_hang SET Ten = ?, Ngay_sinh = ?, CCCD = ?, Email = ?, Dia_chi = ?, SDT = ?, Gioi_tinh = ? WHERE ID_Khachhang = \"" + passenger.getID_Passenger() + '"';
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, passenger.getHo_va_Ten());
+            statement.setDate(2, java.sql.Date.valueOf(passenger.getLocalDate()));
+            statement.setString(3, passenger.getCccd());
+            statement.setString(4, passenger.getEmail()); // Assuming the User class has an "id" property
+            statement.setString(5, passenger.getAddress());
+            statement.setString(6, passenger.getPhone());
+            statement.setString(7, passenger.getGender());
+            statement.executeUpdate();
+
+            // Close the statement
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
     public static void main(String[] args) {

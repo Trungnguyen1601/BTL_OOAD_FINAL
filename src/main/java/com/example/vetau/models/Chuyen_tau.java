@@ -10,8 +10,7 @@ public class Chuyen_tau {
     private Ga_tau Gaden;
     private Tau tau;
     private String Giodi;
-    private Button deleteButton;
-    private Button inforButton;
+
     private Date ngaydi;
     private Date ngayden;
 
@@ -25,8 +24,6 @@ public class Chuyen_tau {
         Gaden = gaden;
         tau = tau_1;
         Giodi = giodi;
-        this.deleteButton = new Button();
-        this.inforButton = new Button();
         this.ngaydi = ngaydi;
         this.ngayden = ngayden;
     }
@@ -37,8 +34,6 @@ public class Chuyen_tau {
         Gaden = gaden;
         tau = tau;
         Giodi = giodi;
-        this.deleteButton = new Button();
-        this.inforButton = new Button();
 
     }
 
@@ -80,13 +75,6 @@ public class Chuyen_tau {
 
     public void setGiodi(String giodi) {
         Giodi = giodi;
-    }
-    public Button getDeleteButton() {
-        return deleteButton;
-    }
-
-    public Button getInforButton() {
-        return inforButton;
     }
 
     public Date getNgaydi() {

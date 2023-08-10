@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="420.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vetau.App.Admin.QuanLyTau.EditTrain.EditTrainController">
+    <children>
+        <AnchorPane prefHeight="80.0" prefWidth="594.0" styleClass="bg-form" stylesheets="@Edit_train.css">
+            <children>
+                <Label layoutX="184.0" layoutY="26.0" text="Sửa thông tin tàu">
+                    <font>
+                        <Font name="System Bold" size="23.0" />
+                    </font>
+                </Label>
+                <Button layoutX="542.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#Close_edit_tau_click" prefHeight="24.0" prefWidth="52.0" styleClass="close" stylesheets="@Edit_train.css">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="CLOSE" />
+                    </graphic>
+                </Button>
+                <Button layoutX="485.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#Minus_edit_tau_click" prefHeight="24.0" prefWidth="57.0" styleClass="minimize" stylesheets="@Edit_train.css">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="MINUS" />
+                    </graphic>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="-1.0" layoutY="80.0" prefHeight="340.0" prefWidth="594.0" style="-fx-background-color: d3edff;">
+            <children>
+                <Label layoutX="125.0" layoutY="67.0" text="Số lượng ghế">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="148.0" layoutY="171.0" text="Loại toa">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="SLghe_editTau_text" layoutX="258.0" layoutY="64.0" prefHeight="25.0" prefWidth="180.0" styleClass="textfield" stylesheets="@Edit_train.css" />
+                <ComboBox fx:id="Loaitoa_editTau_combo" layoutX="258.0" layoutY="167.0" onMouseClicked="#Loaitoa_Combo_edit" prefHeight="28.0" prefWidth="180.0" stylesheets="@Edit_train.css" />
+                <Button layoutX="276.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#Save_EditTau_Click" prefHeight="54.0" prefWidth="114.0" styleClass="save-btn" stylesheets="@Edit_train.css" text="Save" />
+                <Button layoutX="478.0" layoutY="249.0" mnemonicParsing="false" onMouseClicked="#Cancel_EditTau_Click" prefHeight="40.0" prefWidth="80.0" styleClass="cancel-btn" stylesheets="@Edit_train.css" text="Cancel" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

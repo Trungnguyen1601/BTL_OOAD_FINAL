@@ -1,6 +1,6 @@
 package com.example.vetau.Show;
 
-import com.example.vetau.TableView.QuanLyTau.QuanLyTauController;
+import com.example.vetau.App.Admin.QuanLyTau.QuanLyTauController;
 import com.example.vetau.helpers.Check_Status;
 import com.example.vetau.helpers.Database;
 import com.example.vetau.models.ChitietTau;
@@ -24,7 +24,6 @@ public class EditableCheckBox<S, T> extends CheckBoxTableCell<S, T> {
 
     public EditableCheckBox() {
 
-
         this.checkBox = new CheckBox();
         this.checkBox.setDisable(false);
         this.checkBox.setOnMouseClicked(event -> {
@@ -41,18 +40,28 @@ public class EditableCheckBox<S, T> extends CheckBoxTableCell<S, T> {
                 }
             }
         });
+//        if(QuanLyTauController.flag_for_alertInformation)
+//        {
+//            this.checkBox.setDisable(false);
+//        }
+//        else {
+//            this.checkBox.setDisable(true);
+//        }
+
         this.checkBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
             if (Updatestatus) {
                 return;
             }
             S rowData = getTableRow().getItem();
             status = this.checkBox.isSelected();
+
             if (rowData instanceof Tau) {
                 Connection connection = Database.connectionDB();
                 // In ra thông tin Person khi trạng thái của ô đánh dấu tích thay đổi
                 Tau tau = (Tau) rowData;
                 System.out.println(tau.getIDTau() + "Trạng thái " + status);
                 System.out.println("Trạng thái cờ " + QuanLyTauController.flag_for_alertInformation);
+
                 if(QuanLyTauController.flag_for_alertInformation) {
                     alert = new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setTitle("Error Message");
@@ -72,8 +81,8 @@ public class EditableCheckBox<S, T> extends CheckBoxTableCell<S, T> {
                         Updatestatus = false; // Bật lại lắng nghe sự kiện
                         alert.close();
                     }
-
                 }
+
 
             }
             if (rowData instanceof ChitietTau)
@@ -102,6 +111,7 @@ public class EditableCheckBox<S, T> extends CheckBoxTableCell<S, T> {
                     }
 
                 }
+
 
             }
         });

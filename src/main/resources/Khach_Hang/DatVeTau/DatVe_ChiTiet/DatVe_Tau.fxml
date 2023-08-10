@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="685.0" prefWidth="1047.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vetau.App.KhachHang.DatVe_Tau.DatVe.DatVeTauController">
+    <children>
+        <AnchorPane layoutX="238.0" layoutY="-6.0" prefHeight="683.0" prefWidth="263.0">
+         <children>
+            <Button layoutX="28.0" layoutY="519.0" mnemonicParsing="false" onMouseClicked="#Datve_Input" text="Đặt vé" />
+            <Button fx:id="refreshButton" layoutX="104.0" layoutY="519.0" mnemonicParsing="false" onAction="#RefreshTableVeTau" text="Refresh" />
+            <Button fx:id="cancelButton" layoutX="192.0" layoutY="519.0" mnemonicParsing="false" onAction="#closeDatVeButtonOnAction" text="Thoát" />
+            <TextField fx:id="vitringoiSearch" layoutX="89.0" layoutY="199.0" />
+            <TextField fx:id="giaveSearch" layoutX="90.0" layoutY="264.0" />
+            <Label layoutX="24.0" layoutY="139.0" text="Toa tàu" />
+            <Label layoutX="18.0" layoutY="203.0" text="Vị trí ngồi" />
+            <Label layoutX="28.0" layoutY="268.0" text="Giá vé" />
+            <Label layoutX="9.0" layoutY="333.0" text="Tình trạng vé" />
+            <Button layoutX="23.0" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#Search_click" prefHeight="26.0" prefWidth="149.0" text="Search" />
+            <ComboBox fx:id="TinhTrangSearch_Combobox" layoutX="89.0" layoutY="329.0" prefWidth="150.0" />
+            <ComboBox fx:id="toatauSearch_Combobox" layoutX="88.0" layoutY="135.0" prefWidth="150.0" />
+            <Button layoutX="194.0" layoutY="401.0" mnemonicParsing="false" onMouseClicked="#Clear_InputSearch" text="Clear" />
+                <Label layoutX="100.0" layoutY="61.0" text="Tìm kiếm vé" />
+         </children>
+        </AnchorPane>
+        <AnchorPane layoutX="509.0" prefHeight="685.0" prefWidth="625.0">
+            <children>
+                <Label layoutX="467.0" layoutY="22.0" text="Thông tin vé tàu chuyến tàu" />
+                <TableView fx:id="VeTable" layoutX="-1.0" layoutY="54.0" prefHeight="630.0" prefWidth="870.0">
+                    <columns>
+                        <TableColumn fx:id="idVetau_col" prefWidth="169.5999755859375" text="Vé tàu" />
+                        <TableColumn fx:id="idChuyentau_col" prefWidth="87.20001220703125" text="Chuyến tàu" />
+                  <TableColumn fx:id="idToatau_col" prefWidth="143.20001220703125" text="Toa tàu" />
+                  <TableColumn fx:id="vitringoi_col" prefWidth="77.60003662109375" text="Vị trí ngồi" />
+                  <TableColumn fx:id="giave_col" prefWidth="120.800048828125" text="Giá vé" />
+                  <TableColumn fx:id="tinhtrangve_col" prefWidth="99.2000732421875" text="Tình trạng vé" />
+                  <TableColumn fx:id="loaive_col" prefWidth="113.5999755859375" text="Loại vé" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+      <TextField fx:id="gadiTxt" layoutX="82.0" layoutY="104.0" />
+      <TextField fx:id="gadenTxt" layoutX="82.0" layoutY="186.0" />
+      <TextField fx:id="idvetauTxt" layoutX="82.0" layoutY="264.0" />
+      <TextField fx:id="toatauTxt" layoutX="82.0" layoutY="334.0" />
+      <Label layoutX="29.0" layoutY="108.0" text="Ga đi" />
+      <Label layoutX="23.0" layoutY="190.0" text="Ga đến" />
+      <Label layoutX="18.0" layoutY="268.0" text="ID Vé tàu" />
+      <Label layoutX="17.0" layoutY="338.0" text="Toa tàu" />
+      <Label layoutX="112.0" layoutY="50.0" text="Thông tin vé" />
+      <TextField fx:id="vitringoiTxt" layoutX="82.0" layoutY="400.0" />
+      <Label layoutX="14.0" layoutY="404.0" text="Vị trí ngồi" />
+      <TextField fx:id="giaveTxt" layoutX="82.0" layoutY="461.0" />
+      <Label layoutX="21.0" layoutY="465.0" text="Giá vé" />
+      <TextField fx:id="tinhtrangveTxt" layoutX="82.0" layoutY="527.0" />
+      <Label layoutX="8.0" layoutY="531.0" text="Tình trạng vé" />
+      <TextField fx:id="loaiveTxt" layoutX="82.0" layoutY="588.0" />
+      <Label layoutX="21.0" layoutY="592.0" text="Loại vé" />
+    </children>
+</AnchorPane>

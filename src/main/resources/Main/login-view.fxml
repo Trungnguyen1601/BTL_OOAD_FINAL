@@ -18,81 +18,86 @@
         <AnchorPane fx:id="signin_form" layoutX="327.0" prefHeight="650.0" prefWidth="483.0" style="-fx-background-color: d3edff;" stylesheets="@login.css">
             <children>
                 <Button fx:id="signin_close" layoutX="432.0" layoutY="2.0" mnemonicParsing="false" onAction="#signin_close" prefHeight="24.0" prefWidth="51.0" styleClass="close" stylesheets="@login.css">
-               <graphic>
+                    <graphic>
                         <FontAwesomeIcon glyphName="CLOSE" />
-               </graphic></Button>
+                    </graphic></Button>
                 <Button fx:id="signin_minimize" layoutX="383.0" layoutY="2.0" mnemonicParsing="false" onAction="#signin_minimize" prefHeight="24.0" prefWidth="51.0" stylesheets="@login.css">
                     <graphic>
                         <FontAwesomeIcon glyphName="MINUS" />
                     </graphic>
-               <styleClass>
-                  <String fx:value="minimize" />
-                  <String fx:value="minimize" />
-               </styleClass>
+                    <styleClass>
+                        <String fx:value="minimize" />
+                        <String fx:value="minimize" />
+                    </styleClass>
                 </Button>
-                <TextField fx:id="signin_username" layoutX="138.0" layoutY="295.0" onAction="#signin" prefHeight="30.0" prefWidth="263.0" promptText="Username" styleClass="textfield" stylesheets="@login.css" text="1" />
-                <PasswordField fx:id="signin_password" layoutX="138.0" layoutY="373.0" onAction="#signin" prefHeight="30.0" prefWidth="263.0" promptText="Password" styleClass="textfield" text="1" />
-                <Button fx:id="signin_btn_login" layoutX="213.0" layoutY="478.0" mnemonicParsing="false" onAction="#signin" prefHeight="55.0" prefWidth="113.0" styleClass="login-btn" stylesheets="@login.css" text="Log in">
+                <TextField fx:id="signin_username" layoutX="138.0" layoutY="295.0" onAction="#signin" prefHeight="30.0" prefWidth="263.0" promptText="Username" styleClass="textfield" stylesheets="@login.css" />
+                <PasswordField fx:id="signin_password" layoutX="138.0" layoutY="373.0" onAction="#signin" prefHeight="30.0" prefWidth="263.0" promptText="Password" styleClass="textfield" />
+                <Button fx:id="signin_btn_login" layoutX="213.0" layoutY="478.0" mnemonicParsing="false" onAction="#signin" prefHeight="54.0" prefWidth="114.0" styleClass="login-btn" stylesheets="@login.css" text="Log in">
                     <font>
                         <Font name="Microsoft Tai Le" size="12.0" />
                     </font>
                 </Button>
                 <Hyperlink fx:id="signin_creataccount" layoutX="200.0" layoutY="558.0" onAction="#switchForm" styleClass="hyberlink" stylesheets="@login.css" text="Tạo khách hàng mới" />
-            <Hyperlink fx:id="signin_forgetpassword" layoutX="114.0" layoutY="432.0" onMouseClicked="#signin_forgetpassword" styleClass="hyberlink" stylesheets="@login.css" text="Quên mật khẩu" />
-            <Label layoutX="167.0" layoutY="89.0" text="Welcome">
-               <font>
-                  <Font name="System Bold" size="40.0" />
-               </font>
-            </Label>
-            <Label layoutX="125.0" layoutY="163.0" text="Access your account">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </Label>
-            <FontAwesomeIcon glyphName="USER" layoutX="112.0" layoutY="326.0" size="1.4em" />
-            <FontAwesomeIcon glyphName="LOCK" layoutX="112.0" layoutY="406.0" size="1.6em" />
+                <Hyperlink fx:id="signin_forgetpassword" layoutX="114.0" layoutY="432.0" onMouseClicked="#signin_forgetpassword" styleClass="hyberlink" stylesheets="@login.css" text="Quên mật khẩu" />
+                <Label layoutX="167.0" layoutY="89.0" text="Welcome">
+                    <font>
+                        <Font name="System Bold" size="40.0" />
+                    </font>
+                </Label>
+                <Label layoutX="125.0" layoutY="163.0" text="Access your account">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                </Label>
+                <FontAwesomeIcon glyphName="USER" layoutX="112.0" layoutY="326.0" size="1.4em" />
+                <FontAwesomeIcon glyphName="LOCK" layoutX="112.0" layoutY="406.0" size="1.6em" />
             </children>
         </AnchorPane>
-      <AnchorPane layoutX="-3.0" prefHeight="650.0" prefWidth="332.0" style="-fx-background-color: #ffd5d3;">
-         <children>
-            <ImageView fitHeight="197.0" fitWidth="263.0" layoutX="34.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/Choo-choo-choo.gif" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
+        <AnchorPane layoutX="-3.0" prefHeight="650.0" prefWidth="332.0" style="-fx-background-color: #ffd5d3;">
+            <children>
+                <ImageView fitHeight="197.0" fitWidth="263.0" layoutX="34.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Image/Choo-choo-choo.gif" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
         <AnchorPane fx:id="signup_form" prefHeight="650.0" prefWidth="810.0" style="-fx-background-color: #d3edff;" visible="false">
             <children>
+                <AnchorPane layoutX="-217.0" layoutY="-516.0" prefHeight="1097.0" prefWidth="737.0" rotate="51.4" style="-fx-background-color: #ffd5d3;">
+                    <children>
+                        <FontAwesomeIcon glyphName="USER_PLUS" layoutX="533.0" layoutY="400.0" rotate="-50.0" selectionFill="#efeaea" size="8em" text="" />
+                        <Label layoutX="576.0" layoutY="393.0" rotate="-50.0" text="Sign Up">
+                            <font>
+                                <Font name="System Bold Italic" size="24.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="signup_usename" layoutX="410.0" layoutY="605.0" prefHeight="30.0" prefWidth="220.0" promptText="Usename" rotate="-51.4" styleClass="textfield_signup" stylesheets="@login.css" />
+                        <TextField fx:id="signup_name" layoutX="470.0" layoutY="659.0" prefHeight="30.0" prefWidth="220.0" promptText="Tên" rotate="-51.4" styleClass="textfield_signup" stylesheets="@login.css" />
+                        <TextField fx:id="signup_email" layoutX="539.0" layoutY="713.0" prefHeight="30.0" prefWidth="220.0" promptText="Email" rotate="-51.4" styleClass="textfield_signup" stylesheets="@login.css" />
+                    </children>
+                </AnchorPane>
                 <Button fx:id="signup_minimize" layoutX="698.0" layoutY="2.0" mnemonicParsing="false" onAction="#signup_minimize" prefHeight="24.0" prefWidth="51.0" styleClass="minimize" stylesheets="@login.css">
                     <graphic>
                         <FontAwesomeIcon glyphName="MINUS" text="" />
                     </graphic>
                 </Button>
-                <FontAwesomeIcon glyphName="USER_PLUS" layoutX="381.0" layoutY="109.0" selectionFill="#efeaea" size="8em" text="" />
-                <Label layoutX="375.0" layoutY="124.0" text="Sign Up">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                </Label>
-                <TextField fx:id="signup_name" layoutX="72.0" layoutY="276.0" prefHeight="30.0" prefWidth="220.0" promptText="Tên" styleClass="textfield" stylesheets="@login.css" />
                 <Button fx:id="signup_btn_signup" layoutX="368.0" layoutY="504.0" mnemonicParsing="false" onAction="#signup" prefHeight="44.0" prefWidth="107.0" styleClass="signup_btn" stylesheets="@login.css" text="Sign Up">
                     <font>
                         <Font name="Microsoft Tai Le" size="12.0" />
                     </font>
                 </Button>
                 <Hyperlink fx:id="signup_hyber_alreadyaccount" layoutX="342.0" layoutY="565.0" onAction="#switchForm" styleClass="hyberlink" stylesheets="@login.css" text="Already have a account" />
-                <TextField fx:id="signup_cccd" layoutX="520.0" layoutY="276.0" prefHeight="30.0" prefWidth="220.0" promptText="CCCD" styleClass="textfield" stylesheets="@login.css" />
-                <TextField fx:id="signup_gioitinh" layoutX="72.0" layoutY="369.0" prefHeight="30.0" prefWidth="220.0" promptText="Giới tính" styleClass="textfield" stylesheets="@login.css" />
-                <TextField fx:id="signup_usename" layoutX="72.0" layoutY="191.0" prefHeight="30.0" prefWidth="220.0" promptText="Usename" styleClass="textfield" stylesheets="@login.css" />
-                <Button fx:id="signup_close" layoutX="750.0" layoutY="2.0" mnemonicParsing="false" onAction="#signup_close" prefHeight="24.0" prefWidth="51.0" styleClass="close" stylesheets="@login.css" textFill="#d11d1d">
+                <TextField fx:id="signup_cccd" layoutX="520.0" layoutY="254.0" prefHeight="30.0" prefWidth="220.0" promptText="CCCD" styleClass="textfield" stylesheets="@login.css" />
+                <TextField fx:id="signup_gioitinh" layoutX="520.0" layoutY="344.0" prefHeight="30.0" prefWidth="220.0" promptText="Giới tính" styleClass="textfield" stylesheets="@login.css" />
+                <Button fx:id="signup_close" layoutX="750.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#signup_close" prefHeight="24.0" prefWidth="51.0" styleClass="close" stylesheets="@login.css" textFill="#d11d1d">
                     <graphic>
                         <FontAwesomeIcon glyphName="CLOSE" />
                     </graphic>
                 </Button>
-            <TextField fx:id="signup_address" layoutX="520.0" layoutY="377.0" prefHeight="26.0" prefWidth="220.0" promptText="Địa chỉ" styleClass="textfield" stylesheets="@login.css" />
-            <DatePicker fx:id="signup_date" layoutX="520.0" layoutY="192.0" prefHeight="30.0" prefWidth="220.0" promptText="Day/Month/Year" showWeekNumbers="true" styleClass="textfield" stylesheets="@login.css" />
-            <TextField fx:id="signup_email" layoutX="72.0" layoutY="447.0" prefHeight="30.0" prefWidth="220.0" promptText="Email" styleClass="textfield" stylesheets="@login.css" />
+                <TextField fx:id="signup_address" layoutX="520.0" layoutY="432.0" prefHeight="26.0" prefWidth="220.0" promptText="Địa chỉ" styleClass="textfield" stylesheets="@login.css" />
+                <DatePicker fx:id="signup_date" layoutX="520.0" layoutY="179.0" prefHeight="30.0" prefWidth="220.0" promptText="Day/Month/Year" showWeekNumbers="true" styleClass="textfield" stylesheets="@login.css" />
+                <TextField fx:id="signup_phone" layoutX="72.0" layoutY="432.0" prefHeight="26.0" prefWidth="220.0" promptText="Số điện thoại" styleClass="textfield_signup" stylesheets="@login.css" />
             </children>
         </AnchorPane>
     </children>

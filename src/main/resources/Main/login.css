@@ -67,3 +67,15 @@
     -fx-background-color:linear-gradient(to bottom right,#4d9a76,#45b796);
 }
 
+.textfield_signup {
+    -fx-background-color:transparent;
+    -fx-text-inner-color:black;
+    -fx-border-color:black;
+    -fx-border-width:0px 0px 1px 0px;
+    -fx-text-size:13px;
+}
+.textfield_signup:focused{
+    -fx-border-color : black;
+    -fx-border-width:0px 0px 1px 0px;
+}
+

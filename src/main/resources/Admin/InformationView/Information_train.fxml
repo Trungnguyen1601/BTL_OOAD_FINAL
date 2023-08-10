@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vetau.App.Admin.Quanlychuyentau.InformationTrainController">
+   <children>
+      <AnchorPane fx:id="Infor_form" prefHeight="600.0" prefWidth="650.0" styleClass="bg-form" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="88.0" prefWidth="659.0" styleClass="bg-white" stylesheets="@../DesignDashBoard.css">
+               <children>
+                  <Label alignment="CENTER" layoutX="205.0" layoutY="31.0" text="Thông tin chuyến tàu">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="close_infor_btn" layoutX="609.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#setClose_infor_btn" prefHeight="24.0" prefWidth="50.0" styleClass="close" stylesheets="@../control.css" textFill="#d91717">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="CLOSE" />
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="273.0" layoutY="94.0" prefHeight="512.0" prefWidth="386.0" style="-fx-background-color: #d3edff;" styleClass="bg-form" stylesheets="@../DesignDashBoard.css">
+               <children>
+                  <TextField fx:id="giodi_infor_text" layoutX="146.0" layoutY="95.0" prefHeight="35.0" prefWidth="208.0" styleClass="textfield" stylesheets="@control.css" />
+                  <TextField fx:id="veban_infor_text" layoutX="146.0" layoutY="375.0" prefHeight="35.0" prefWidth="208.0" styleClass="textfield" stylesheets="@control.css" />
+                  <TextField fx:id="sotoa_infor_text" layoutX="146.0" layoutY="304.0" prefHeight="35.0" prefWidth="208.0" styleClass="textfield" stylesheets="@control.css" />
+                  <TextField fx:id="ve_conlai_infor_text" layoutX="146.0" layoutY="231.0" prefHeight="35.0" prefWidth="208.0" styleClass="textfield" stylesheets="@control.css" />
+                  <Button fx:id="Edit_in_infor_btn" layoutX="150.0" layoutY="445.0" mnemonicParsing="false" onMouseClicked="#setEdit_in_infor_btn" prefHeight="46.0" prefWidth="104.0" styleClass="update_btn" stylesheets="@control.css" text="Sửa" />
+                  <TextField fx:id="diemdi_infor_id" layoutX="146.0" layoutY="33.0" prefHeight="35.0" prefWidth="208.0" styleClass="textfield" stylesheets="@control.css" />
+                  <TextField fx:id="diemden_infor_id" layoutX="146.0" layoutY="160.0" prefHeight="35.0" prefWidth="208.0" styleClass="textfield" stylesheets="@control.css" />
+                  <Label layoutX="22.0" layoutY="42.0" prefHeight="16.0" prefWidth="82.0" text="Điểm đi">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="169.0" prefHeight="16.0" prefWidth="82.0" text="Điểm đến">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="240.0" prefHeight="16.0" prefWidth="82.0" text="Vé còn lại">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="8.0" layoutY="313.0" prefHeight="18.0" prefWidth="110.0" text="Số lượng toa">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="104.0" prefHeight="16.0" prefWidth="82.0" text="Giờ đi">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="366.0" prefHeight="53.0" prefWidth="82.0" text="Số lượng vé bán" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="94.0" prefHeight="512.0" prefWidth="274.0" style="-fx-background-color: #ffd5d3;">
+               <children>
+                  <FontAwesomeIcon glyphName="TRAIN" layoutX="92.0" layoutY="132.0" size="8em" />
+                  <TextField fx:id="gadden_infor_text" layoutX="54.0" layoutY="449.0" prefHeight="35.0" prefWidth="166.0" styleClass="textfield" stylesheets="@control.css" />
+                  <TextField fx:id="idTau_infor_text" layoutX="54.0" layoutY="239.0" prefHeight="35.0" prefWidth="166.0" styleClass="textfield" stylesheets="@control.css" />
+                  <TextField fx:id="gadi_infor_text" layoutX="50.0" layoutY="345.0" prefHeight="35.0" prefWidth="166.0" styleClass="textfield" stylesheets="@control.css">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="51.0" layoutY="202.0" prefHeight="16.0" prefWidth="82.0" text="ID Tàu">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="51.0" layoutY="318.0" prefHeight="16.0" prefWidth="82.0" text="Ga đi">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="54.0" layoutY="416.0" prefHeight="16.0" prefWidth="82.0" text="Ga đến">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Edit_form" layoutX="75.0" layoutY="94.0" prefHeight="600.0" prefWidth="650.0" styleClass="bg-form" stylesheets="@control.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="7.0" layoutY="93.0" prefHeight="506.0" prefWidth="645.0" styleClass="bg-form-child" stylesheets="@control.css">
+               <children>
+                  <TextField fx:id="giodi_edit_text" layoutX="100.0" layoutY="118.0" prefHeight="35.0" prefWidth="209.0" styleClass="add_textfield" stylesheets="@control.css" />
+                  <TextField fx:id="soluongtoa_edit_text" layoutX="416.0" layoutY="278.0" prefHeight="35.0" prefWidth="209.0" styleClass="add_textfield" stylesheets="@control.css" />
+                  <Button fx:id="OK_edit_btn" layoutX="471.0" layoutY="367.0" mnemonicParsing="false" onMouseClicked="#setOK" prefHeight="46.0" prefWidth="98.0" styleClass="update_btn" stylesheets="@../control.css" text="OK" />
+                  <ComboBox fx:id="tau_edit_combo" layoutX="415.0" layoutY="118.0" prefHeight="35.0" prefWidth="210.0" stylesheets="@control.css" />
+                  <Label layoutX="32.0" layoutY="59.0" text="Ga đi">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="340.0" layoutY="58.0" text="Ga đến">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="30.0" layoutY="126.0" text="Giờ đi">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="354.0" layoutY="126.0" text="Tàu">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="333.0" layoutY="269.0" prefHeight="53.0" prefWidth="75.0" text="Số lượng toa" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font></Label>
+                  <ComboBox fx:id="gadi_edit_combo" layoutX="99.0" layoutY="50.0" prefHeight="35.0" prefWidth="210.0" stylesheets="@control.css" />
+                  <ComboBox fx:id="gaden_edit_combo" layoutX="415.0" layoutY="50.0" prefHeight="35.0" prefWidth="210.0" styleClass="combo-box" stylesheets="@control.css" />
+                  <DatePicker fx:id="ngaydi_edit_date" layoutX="99.0" layoutY="191.0" prefHeight="35.0" prefWidth="210.0" stylesheets="@control.css" />
+                  <DatePicker fx:id="ngayden_edit_date" layoutX="415.0" layoutY="191.0" prefHeight="35.0" prefWidth="210.0" stylesheets="@control.css" />
+                  <Label layoutX="23.0" layoutY="200.0" text="Ngày đi">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="333.0" layoutY="200.0" text="Ngày đến">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="87.0" prefWidth="659.0" style="-fx-background-color: #ffd5d3;" styleClass="bg-form" stylesheets="@../control.css">
+               <children>
+                  <Label layoutX="198.0" layoutY="24.0" text="Sửa thông tin chuyến tàu">
+                     <font>
+                        <Font name="System Bold Italic" size="23.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="Edit_close_btn" layoutX="607.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#setEdit_close_btn" prefHeight="24.0" prefWidth="52.0" styleClass="close" stylesheets="@../control.css">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="CLOSE" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="edit_minus_btn" layoutX="555.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#setedit_minus_btn" prefHeight="24.0" prefWidth="52.0" styleClass="minimize" stylesheets="@control.css">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="MINUS" />
+                     </graphic>
+                  </Button>
+                  <FontAwesomeIcon glyphName="INFO" layoutX="180.0" layoutY="50.0" size="2.5em" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

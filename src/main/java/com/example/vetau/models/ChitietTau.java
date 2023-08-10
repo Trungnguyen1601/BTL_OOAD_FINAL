@@ -1,5 +1,6 @@
 package com.example.vetau.models;
 
+import com.example.vetau.helpers.Check_Status;
 import javafx.scene.control.Button;
 
 public class ChitietTau {
@@ -11,6 +12,13 @@ public class ChitietTau {
 
     public boolean isTrangthai() {
         return Trangthai;
+    }
+    public String isTrangthaiToa_String() {
+        return Check_Status.ReturnString_Check(Trangthai);
+    }
+    public String isTrangthaiTau_String()
+    {
+        return Check_Status.ReturnString_Check(tau.isTrangthai());
     }
 
     public void setTrangthai(boolean trangthai) {
